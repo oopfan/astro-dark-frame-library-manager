@@ -8,5 +8,40 @@ Astrophotographers use software to stack the individual 30-second exposures to c
 
 The amount of thermal energy is a function of time and temperature. As time or temperature increase so does the amount of thermal energy. In other words a 30-second Dark frame taken at 70 degrees Fahrenheit is not equivalent to a 30-second Dark frame at 69 degrees Fahrenheit. During the course of an imaging session the temperature may fall 10 degrees. Many astrophotographers capture Dark frames before taking Light frames (that is, taking off the lens cap and shooting the galaxy.) That works but subtracts too much thermal energy. Some astrophotographers capture Dark frames after taking Lights. This is bad practice which leads to noisy images and Raining Noise in severe cases. The best thing is to match the temperature of the Light frame with the temperature of the Darks.
 
+## A Preview of what you can expect with temperature-matching
+This is the Bubble Nebula (NGC 7635). It is comprised of 100x 50-second exposures for a total of 83 minutes. It was taken over two consecutive nights.
+
+Lights:
+* 70.5 degrees: 1 frame
+* 71.0 degrees: 22 frames
+* 71.5 degrees: 48 frames
+* 72.0 degrees: 4 frames
+* 72.5 degrees: 69 frames
+
+Darks:
+* 70.5 degrees: 113 frames
+* 71.0 degrees: 69 frames
+* 71.5 degrees: 94 frames
+* 72.0 degrees: 96 frames
+* 72.5 degrees: 96 frames
+
+![The Bubble Nebula with temperature matching](https://s3.amazonaws.com/oopfan-astrophotos/NGC_7635_Lum_100x50s_G100_BL20_TEMPMATCH.jpg)
+
+Notice the creamy smoothness of the nebula and the darkness of space.
+
+## And without temperature-matching
+
+This is the Crescent Nebula (NGC 6888). It is comprised of 122x 45-second exposures.
+
+175 Light frames collected between 11:17pm and 1:57am.
+
+50 Dark frames collected in two batches: 25 frames from 10:35pm to 10:56pm, and 25 frames from 2:06am to 2:26am. They were combined into one master dark file. (This is an effective technique to average the effect of a steep temperature gradient.)
+
+(I don't have a record of the beginning and ending temperature.)
+
+![The Crescent Nebula without temperature matching](https://s3.amazonaws.com/oopfan-astrophotos/NGC_6888_Processed_Red_122x45s_G100_BL20_20180618_BMorgan.jpg)
+
+Notice that the image is covered with tiny, faint speckles. Those are not stars. It is thermal noise that was injected into the image by not matching the temperature of the Lights and the Darks.
+
 ## Building a Dark frame library
 More information to follow.
