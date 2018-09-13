@@ -43,5 +43,74 @@ This is the Crescent Nebula (NGC 6888). It is comprised of 122x 45-second exposu
 
 Notice that the image is covered with tiny, faint speckles. Those are not stars. It is thermal noise that was injected into the image by not matching the temperature of the Lights and the Darks.
 
-## Building a Dark frame library
+## Organizing your Dark frames
+Here is how I organize them:
+* Z:\
+  * Astrophotography
+    * Darks
+      * Altair 290M
+        * 50s_G100_BL20
+          * temp_53.0F
+          * temp_53.5F
+          * temp_54.0F
+          * temp_54.5F
+          * temp_55.0F
+          * etc...
+        * 40s_G389_BL30
+          * temp_53.0F
+          * temp_53.5F
+          * temp_54.0F
+          * temp_54.5F
+          * temp_55.0F
+          * etc...
+
+Notes:
+* "Altair290M" is the manufacturer and model of my camera.
+* "50s_G100_BL20" is the exposure, gain, and black level settings. Notice that if you change any one of these then you need to collect a new set of Dark frames.
+
+As far as the Library Manager application is concerned you just need to supply the *parent folder*, for example *Z:\Astrophotography\Darks\Altair290M\50s_G100_BL20* or *Z:\Astrophotography\Darks\Altair290M\40s_G389_BL30*. The application doesn't care how you organize your folders above that point. Also note that you do not need to pre-populate the *temp_xx.xF* folders. The application will lead you through that process.
+
+## Organizing your Light frames
+Here is how I organize them:
+* Z:\
+  * Astrophotography
+    * NGC 7635
+      * NGC_7635_Lum_50s_G100_BL20
+        * temp_53.0F
+        * temp_53.5F
+        * temp_54.0F
+        * temp_54.5F
+        * temp_55.0F
+        * etc...
+    * NGC 7331
+      * NGC_7331_Lum_50s_G100_BL20
+        * temp_53.0F
+        * temp_53.5F
+        * temp_54.0F
+        * temp_54.5F
+        * temp_55.0F
+        * etc...
+      * NGC_7331_Red_50s_G100_BL20
+        * temp_53.0F
+        * temp_53.5F
+        * temp_54.0F
+        * temp_54.5F
+        * temp_55.0F
+        * etc...
+
+The same Library Manager application can organize your Light frames as well as your Dark frames. Please refer to the section entitled *Organizing your Dark frames* for helpful information.
+
+## A NodeJS application for efficiently organizing your Dark and Light frames
+More information to follow.
+
+## The format of the Temperature Log file
+More information to follow.
+
+## Building a Temperature Logger using an Arduino Uno
+More information to follow.
+
+## Using the NodeJS application
+More information to follow.
+
+## Using the Temperature Logger
 More information to follow.
