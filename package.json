@@ -1,0 +1,11 @@
+{
+  "name": "astro-dark-frame-library-manager",
+  "version": "1.0.0",
+  "description": "To achieve the finest astronomy images with a telescope and uncooled CMOS camera, astrophotographers need to match the temperature of Light frames and Dark frames. The solution presented here will facilitate the creation of a Darks Library which will free your time under the stars to concentrate on the acquisition of Light frames. Furthermore it will minimize the impact of thermal noise in your final stack and thwart the effects of Raining Noise.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian D. Morgan",
+  "license": "ISC"
+}
