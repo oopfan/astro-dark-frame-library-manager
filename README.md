@@ -126,7 +126,7 @@ Commands require one or more options:
 * *--out* - The path name of the parent output image file directory containing the child temperature directories.
 * *--log* - The path name of the input temperature log file.
 
-Up until now we have not spoken about the "*input image file directory*". It is the location where your image acquisition software (mine is [SharpCap](https://www.sharpcap.co.uk/) stores image files. Generally speaking you will use a different computer, probably a laptop, to run the software with your telescope outdoors. At the end of the session you will likely download the files to your desktop machine where you will do image processing. Where you decide to put those files is your choice. "*--in*" must specify that path, for example:
+Up until now we have not spoken about the "*input image file directory*". It is the location where your image acquisition software (mine is [SharpCap](https://www.sharpcap.co.uk/)) stores image files. Generally speaking you will use a different computer, probably a laptop, to run the software with your telescope outdoors. At the end of the session you will likely download the files to your desktop machine where you will do image processing. Where you decide to put those files is your choice. "*--in*" must specify that path, for example:
 
 *node app.js list-images --in="C:\SharpCap\2018-09-13\Capture\18_27_20"*
 
@@ -167,6 +167,13 @@ More information to follow.
 
 ## Using the Temperature Logger
 More information to follow.
+
+# My Kit
+The cost of entry to this hobby is modest. Of course you can go crazy and spend tens of thousands of dollars but for me the total cost of what you see below is about $1500. Some people spend that much money on just the camera alone but my philosophy has always been "Do more with less."
+
+![My Kit](https://s3.amazonaws.com/oopfan-astrophotos/My_Kit_WO71_20171207_Bmorgan.JPG)
+
+Note that the small telescope with the red camera really is not necessary. You can do without it and save $200. The remaining camera is for imaging. It is monochrome (i.e. black-and-white.) The pancake-shaped wheel in front of it is loaded with filters on a carousel which enables me to capture in color. The mount and tripod is from a 50-year old Unitron telescope. It was a gift to me when I was a child. I added the motor last year to help with tracking stars. It allows me to take exposures up to 90 seconds in length.
 
 # License
 Copyright 2018 Brian D. Morgan
