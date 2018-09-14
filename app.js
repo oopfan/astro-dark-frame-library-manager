@@ -26,7 +26,7 @@ const argv = yargs
   .command('list-temps', 'Read the temperature log file and list the time and temperature.', {
     tempin: tempinOptions
   })
-  .command('join-all', 'For each image file, look up the temperature, and list the command shell "move" command.', {
+  .command('organize', 'For each image file, look up the temperature, and list the command shell "move" command.', {
     imagein: imageinOptions,
     tempin: tempinOptions,
     imageout: imageoutOptions
@@ -51,7 +51,7 @@ if (command == 'list-images') {
       console.log(`${temperatureLog.unixtimeArray[index]},${temperatureLog.temperatureArray[index]}`);
     }
   });
-} else if (command == 'join-all') {
+} else if (command == 'organize') {
   Promise.all([
     utils.asyncReadTemperatureLog(argv.tempin),
     utils.asyncReadImageDir(argv.imagein)
@@ -65,7 +65,7 @@ if (command == 'list-images') {
       if (index >= 0) {
         var number = temperatureLog.temperatureArray[index];
         var rounded = mround(number, 0.5);
-        console.log(`MOVE ${filePath} ${argv.imageout}\\temp_${rounded.toFixed(1)}F\\`);
+        console.log(`MOVE "${filePath}" "${argv.imageout}\\temp_${rounded.toFixed(1)}F\\"`);
       } else {
         console.log(`REM -- Temperature Not Found -- ${filePath}`);
       }
