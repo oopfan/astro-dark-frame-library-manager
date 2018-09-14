@@ -148,7 +148,9 @@ The "*organize*" command takes all three options, for example:
 
 Note that the order of the options is unimportant.
 
-Also note that in the above example the standard output is redirected to a batch file. This batch file contains the actual shell commands to move the image files from the input directory to the output.
+Also note that in the above example the standard output is redirected to a batch file. This batch file contains the actual shell commands to move the image files from the input directory to the output. If you do not redirect the output then it will go out to the console.
+
+Depending on the *maturity* of your temperature folders some input image files may not move to the output if the temperature folder does not exist. The application will not create it for you (at least not in this version.) If this happens you will know it by observing the message "0 files moved" and by noting that the file still remains in the input directory. To remedy you need to create the appropriate temperature folder. You will know what the name should be by inspecting the output of the batch file. When completed rerun the batch file until all files are moved. Note that some files may never move if the temperature logger was not running at that time. The batch file will reflect this fact with a remark (REM).
 
 Until you are confident with the operation of this application I recommend that you inspect the contents of the batch file before executing it. Also, make a copy of your files. The last thing you want is to lose them. I try my best to write bug-free code but I can not be liable for loss. Make sure you keep a copy of your input files on your laptop until you are confident with the result of the operation.
 
