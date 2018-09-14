@@ -101,15 +101,51 @@ Here is how I organize them:
 The same Library Manager application can organize your Light frames as well as your Dark frames. Please refer to the section entitled *Organizing your Dark frames* for helpful information.
 
 ## A NodeJS application for efficiently organizing your Dark and Light frames
-More information to follow.
+The application in this GitHub repository is invoked from the command line. This program is not terribly complex but it could benefit from a graphical user interface. It is written in JavaScript and thus needs NodeJS to run. (You cannot run it from the browser!)
+
+To install NodeJS:
+* Navigate to https://nodejs.org
+* Download and install the current version.
+
+To download the application code:
+* Click on the "*Clone or Download*" button in GitHub.
+* Select *Download ZIP*.
+* Extract the ZIP. Choose any location you wish.
+* Launch the Command Prompt (for Windows users) and change the directory to that location.
+* Type "*npm install*" and press the Enter key. Wait a minute for all dependencies to load.
+* Type "*node app.js --help*".
+
+The application accepts three commands:
+* *list-images* - Reads the input image directory and lists the file names and creation date.
+* *list-temps* - Reads the temperature log file and lists the time and temperature.
+* *join-all* - For each image file in the input directory, looks up the temperature, and lists the shell command that will move the file into the appropriate temperature folder.
+* Get help for any command by typing "*node app.js &lt;command&gt; --help*".
+
+Commands require one or more options:
+* *--in* - The path name of the input image file directory.
+* *--out* - The path name of the parent output image file directory containing the child temperature directories.
+* *--log* - The path name of the input temperature log file.
+
+Up until now we have not spoken about the "*input image file directory*". It is the location where your image acquisition software (mine is [SharpCap](https://www.sharpcap.co.uk/)) stores image files. Generally speaking you will use a different computer, probably a laptop, to run the software with your telescope outdoors. At the end of the session you will likely download the files to your desktop machine where you will do image processing. Where you decide to put those files is your choice. "*--in*" must specify that path, for example:
+
+*node list-images --in="C:\SharpCap\2018-09-13\Capture\18_27_20"*
+
+The "*--out*" option specifies the path to the output image file directory. If you are organizing Dark frames then you might say:
+
+*--out="Z:\Astrophotography\Darks\Altair 290M\50s_G100_BL20"*
+
+and if you are organizing Light frames then you might say:
+
+*--out="Z:\Astrophotography\NGC 7635\NGC_7635_Lum_50s_G100_BL20"*
+
+The "*--log*" option specifies the path to the temperature log file. This file is essential to the task of determining the name of the output temperature directory. For example:
+
+*node --list-temps --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv"*
 
 ## The format of the Temperature Log file
 More information to follow.
 
 ## Building a Temperature Logger using an Arduino Uno
-More information to follow.
-
-## Using the NodeJS application
 More information to follow.
 
 ## Using the Temperature Logger
