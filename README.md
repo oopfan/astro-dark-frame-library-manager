@@ -65,7 +65,7 @@ Here is how I organize them:
           * etc...
 
 Notes:
-* "Altair290M" is the manufacturer and model of my camera.
+* "Altair 290M" is the manufacturer and model of my camera.
 * "50s_G100_BL20" is the exposure, gain, and black level settings. Notice that if you change any one of these then you need to collect a new set of Dark frames.
 
 As far as the Library Manager application is concerned you just need to supply the *parent folder*, for example *Z:\Astrophotography\Darks\Altair290M\50s_G100_BL20* or *Z:\Astrophotography\Darks\Altair290M\40s_G389_BL30*. The application doesn't care how you organize your folders above that point. Also note that you do not need to pre-populate the *temp_xx.xF* folders. The application will lead you through that process.
@@ -153,6 +153,8 @@ Also note that in the above example the standard output is redirected to a batch
 Depending on the *maturity* of your temperature folders some input image files may not move to the output if the temperature folder does not exist. The application will not create it for you (at least not in this version.) If this happens you will know it by observing the message "0 files moved" and by noting that the file still remains in the input directory. To remedy you need to create the appropriate temperature folder. You will know what the name should be by inspecting the output of the batch file. When completed rerun the batch file until all files are moved. Note that some files may never move if the temperature logger was not running at that time. The batch file will reflect this fact with a remark (REM).
 
 Until you are confident with the operation of this application I recommend that you inspect the contents of the batch file before executing it. Also, make a copy of your files. The last thing you want is to lose them. I try my best to write bug-free code but I can not be liable for loss. Make sure you keep a copy of your input files on your laptop until you are confident with the result of the operation.
+
+One last important point to make is this: Make sure to tell your acquisition software to prefix the image files with today's date since it may take several days to acquire 100+ Dark frames at a given temperature. You want to ensure that there are no name collisions. In [SharpCap](https://www.sharpcap.co.uk/) I can specify the *target*. At a minimum you should enter today's date, for example "*20180913*". I go further and say "*Darks_50s_G100_BL20_20180913*". It is up to you. You may want to follow a similar convention for Light frames, for example "*NGC_7635_Lum_50s_G100_BL20_20180904*".
 
 ## The format of the Temperature Log file
 The temperature log file is expected to be a text file in comma-separated-value (CSV) format. Each line contains three values but only the first and the last are meaningful to this application:
