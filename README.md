@@ -118,7 +118,7 @@ To download the application code:
 The application accepts three commands:
 * *list-images* - Reads the input image directory and lists the file names and creation date.
 * *list-temps* - Reads the temperature log file and lists the time and temperature.
-* *join-all* - For each image file in the input directory, looks up the temperature, and lists the shell command that will move the file into the appropriate temperature folder.
+* *organize* - For each image file in the input directory, looks up the temperature, and lists the shell command that will move the file into the appropriate temperature folder.
 * Get help for any command by typing "*node app.js &lt;command&gt; --help*".
 
 Commands require one or more options:
@@ -126,9 +126,9 @@ Commands require one or more options:
 * *--out* - The path name of the parent output image file directory containing the child temperature directories.
 * *--log* - The path name of the input temperature log file.
 
-Up until now we have not spoken about the "*input image file directory*". It is the location where your image acquisition software (mine is [SharpCap](https://www.sharpcap.co.uk/)) stores image files. Generally speaking you will use a different computer, probably a laptop, to run the software with your telescope outdoors. At the end of the session you will likely download the files to your desktop machine where you will do image processing. Where you decide to put those files is your choice. "*--in*" must specify that path, for example:
+Up until now we have not spoken about the "*input image file directory*". It is the location where your image acquisition software (mine is [SharpCap](https://www.sharpcap.co.uk/) stores image files. Generally speaking you will use a different computer, probably a laptop, to run the software with your telescope outdoors. At the end of the session you will likely download the files to your desktop machine where you will do image processing. Where you decide to put those files is your choice. "*--in*" must specify that path, for example:
 
-*node list-images --in="C:\SharpCap\2018-09-13\Capture\18_27_20"*
+*node app.js list-images --in="C:\SharpCap\2018-09-13\Capture\18_27_20"*
 
 The "*--out*" option specifies the path to the output image file directory. If you are organizing Dark frames then you might say:
 
@@ -140,12 +140,27 @@ and if you are organizing Light frames then you might say:
 
 The "*--log*" option specifies the path to the temperature log file. This file is essential to the task of determining the name of the output temperature directory. For example:
 
-*node --list-temps --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv"*
+*node app.js --list-temps --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv"*
+
+The "*organize*" command takes all three options, for example:
+
+*node app.js --organize --in="C:\SharpCap\2018-09-13\Capture\18_27_20" --out="Z:\Astrophotography\Darks\Altair 290M\50s_G100_BL20" --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv" > organize.bat*
+
+Note that the order of the options is unimportant.
+
+Also note that in the above example the standard output is redirected to a batch file. This batch file contains the actual shell commands to move the image files from the input directory to the output.
+
+Until you are confident with the operation of this application I recommend that you inspect the contents of the batch file before executing it. Also, make a copy of your files. The last thing you want is to lose them. I try my best to write bug-free code but I can not be liable for loss. Make sure you keep a copy of your input files on your laptop until you are confident with the result of the operation.
 
 ## The format of the Temperature Log file
-More information to follow.
+The temperature log file is expected to be a text file in comma-separated-value (CSV) format. Each line contains three values but only the first and the last are meaningful to this application:
+* unixtime - The number of seconds elapsed since 00:00:00 Universal Coordinated Time (UTC) on January 1, 1970. This is the time at which the temperature was sampled.
+* utc - This a text string representing the time in human readable form.
+* temp - This is the temperature in Fahrenheit.
 
 ## Building a Temperature Logger using an Arduino Uno
+The device that I use is the [Arduino Uno Rev3](https://store.arduino.cc/usa/arduino-uno-rev3/) with add-on products and libraries from [Adafruit](https://www.adafruit.com/). It is a self-contained unit with an SD card reader/writer for storing the temperature log file, an integrated real-time clock and coin cell battery backup, and a 1200maH LIPO battery and charger for stand-alone operation.
+
 More information to follow.
 
 ## Using the Temperature Logger
