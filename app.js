@@ -86,4 +86,6 @@ if (command == 'list-images') {
       }
     });
   });
+} else {
+  console.log(`Unknown command: ${command}`);
 }
