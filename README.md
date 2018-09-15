@@ -140,11 +140,11 @@ and if you are organizing Light frames then you might say:
 
 The "*--log*" option specifies the path to the temperature log file. This file is essential to the task of determining the name of the output temperature directory. For example:
 
-*node app.js --list-temps --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv"*
+*node app.js list-temps --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv"*
 
 The "*organize*" command takes all three options, for example:
 
-*node app.js --organize --in="C:\SharpCap\2018-09-13\Capture\18_27_20" --out="Z:\Astrophotography\Darks\Altair 290M\50s_G100_BL20" --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv" > organize.bat*
+*node app.js organize --in="C:\SharpCap\2018-09-13\Capture\18_27_20" --out="Z:\Astrophotography\Darks\Altair 290M\50s_G100_BL20" --log="Z:\Astrophotography\temperaturelogs\temperaturelog-20180913.csv" > organize.bat*
 
 Note that the order of the options is unimportant.
 
