@@ -79,7 +79,7 @@ if (command == 'list-images') {
       var index = utils.lookupTemperatureIndex(temperatureLog, birthTime);
       if (index >= 0) {
         var number = temperatureLog.temperatureArray[index];
-        var rounded = mround(number, 0.5);
+        var rounded = utils.mround(number, 0.5);
         console.log(`MOVE "${filePath}" "${argv.imageout}\\temp_${rounded.toFixed(1)}F\\"`);
       } else {
         console.log(`REM -- Temperature Not Found -- ${filePath}`);
