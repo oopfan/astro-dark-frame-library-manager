@@ -57,6 +57,8 @@ if (command == 'list-images') {
     imageFileArray.forEach((imageFile) => {
       console.log(`${imageFile.filePath},${imageFile.birthTime}`);
     });
+  }, (reason) => {
+    console.log(reason);
   });
 } else if (command == 'list-temps') {
   utils.asyncReadTemperatureLog(argv.tempin).then((temperatureLog) => {
@@ -65,6 +67,8 @@ if (command == 'list-images') {
     for (var index = 0; index < len; index++) {
       console.log(`${temperatureLog.unixtimeArray[index]},${temperatureLog.temperatureArray[index]}`);
     }
+  }, (reason) => {
+    console.log(reason);
   });
 } else if (command == 'organize') {
   Promise.all([
@@ -85,6 +89,8 @@ if (command == 'list-images') {
         console.log(`REM -- Temperature Not Found -- ${filePath}`);
       }
     });
+  }, (reason) => {
+    console.log(reason);
   });
 } else {
   console.log(`Unknown command: ${command}`);

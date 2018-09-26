@@ -44,8 +44,12 @@ var asyncReadTemperatureLog = (path) => {
   return new Promise((resolve, reject) => {
     var unixtimeArray = [];
     var temperatureArray = [];
+    var input = fs.createReadStream(path);
+    input.on('error', function(err) {
+      reject(err);
+    });
     const rl = readline.createInterface({
-      input: fs.createReadStream(path),
+      input,
       crlfDelay: Infinity
     });
     rl.on('line', (line) => {
