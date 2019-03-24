@@ -28,6 +28,7 @@ var asyncReadImageDir = (path) => {
             const filePath = `${path}\\${dirent.name}`;
             const stats = fs.statSync(filePath);
             const birthTime = stats.birthtimeMs / 1000;
+            //const birthTime = stats.mtimeMs / 1000;
             imageFileArray.push({
               filePath,
               birthTime
